@@ -1,0 +1,16 @@
+Hw 3
+
+Part A.
+	1.
+		The alternative code to read a comma delimited text  still works and is a more functional style due to the use of map and reduce. Map allows for a function to be run on all elements of a sequence. In this case our sequence  first starts with all the lines in the file which we determined using getLines. The code broken down as follows:
+		.map(_.split(",", -1)) takes the sequence of lines and splits them up into each word in the line (aka tokens)
+		.map(a => a.map(z => if (z == "") 1 else 0)) then looks through each word (a) in the line  and determines if it is a null value or not. Creating a sequence for each line with a value of 0 or 1 in the location of each word. 
+		.reduce((x, y) => (x zip y).map { case (u, v) => u + v }) Because there is now a sequence of 0 or 1’s for each line we must combine all of these sequences to determine the total number of null values in each column (combine into one sequence). Reduce allows for the comparison/combitionation of two sequences and the additional map looks at the values at a given position in both sequences and adds them together. 
+		
+
+	2.
+		The 32bit binary : 01001001100101100000001011010010
+
+
+	
+
